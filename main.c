@@ -8,12 +8,24 @@
 #define SCALE 0.2
 #define CUTOFF 0
 
+// Terminal default externs
+int terminal_width, terminal_height;
+
+// Game externs
 Entity *entity_list = NULL;
 Entity *player = NULL;
 
-int main(){
-	int terminal_width = -1, terminal_height = -1;
+/*
+Encapsulated ncurses terminal setup
+*/
+void ncurses_setup(){
+    initscr();
 
+    // Get terminal window width & height
+    getmaxyx(stdscr, terminal_height, terminal_width);
+}
+
+int main(){
 	// Open Simplex
 	struct osn_context *ctx;
 	double noise;
@@ -23,10 +35,7 @@ int main(){
 		exit(1);
 	}
 
-	initscr();
-
-	getmaxyx(stdscr, terminal_height, terminal_width);
-
+	ncurses_setup();
 
 	for (int x = 0; x < terminal_width; x++){
 		for (int y = 0; y < terminal_height; y++){

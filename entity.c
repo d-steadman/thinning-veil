@@ -1,3 +1,8 @@
+#include <ncurses.h>
+#include <stdlib.h>
+
+#include "entity.h"
+
 Entity *create_entity(Position start, char symbol) {
     Entity *new_entity = calloc(1, sizeof(Entity));
 

@@ -8,9 +8,6 @@ Entity and player structs and functionality.
 Also includes an entity list for holding level entities.
 */
 
-#include <ncurses.h>
-#include <stdlib.h>
-
 typedef struct {
     int x;
     int y;
@@ -25,18 +22,18 @@ typedef struct {
     Entity *next;
 } Entity;
 
-enum MoveDirection {
+typedef enum {
     MOVE_DIR_UP,
     MOVE_DIR_DOWN,
     MOVE_DIR_RIGHT,
     MOVE_DIR_LEFT
-}
+} MoveDirection;
 
-enum MoveStatus {
+typedef enum {
     MOVE_STATUS_SUCCESS,    // Entity moved normally
     MOVE_STATUS_FAILED,     // Could not perform move
     MOVE_STATUS_NOT_REC     // Confirm move (used for player moves)
-}
+} MoveStatus;
 
 /* Generic entity methods */
 Entity *create_entity(Position start, char symbol);

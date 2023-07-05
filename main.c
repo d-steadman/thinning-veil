@@ -2,10 +2,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "entity.h"
 #include "open-simplex.h"
 
 #define SCALE 0.2
 #define CUTOFF 0
+
+Entity *entity_list = NULL;
+Entity *player = NULL;
 
 int main(){
 	int terminal_width = -1, terminal_height = -1;

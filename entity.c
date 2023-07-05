@@ -25,7 +25,7 @@ void entity_list_insert(Entity *new_entity) {
     Entity *current = entity_list;
 
     while (current->next)
-        next = next->next;
+        current = current->next;
 
     new_entity->previous = current;
     current->next = new_entity;

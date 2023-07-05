@@ -13,13 +13,13 @@ typedef struct {
     int y;
 } Position;
 
-typedef struct {
+typedef struct Entity {
     Position pos;
     char symbol;
 
     // For entity list
-    Entity *previous;
-    Entity *next;
+    struct Entity *previous;
+    struct Entity *next;
 } Entity;
 
 typedef enum {

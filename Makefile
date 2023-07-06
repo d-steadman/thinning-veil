@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -g -lncurses
+CFLAGS = -g -D_XOPEN_SOURCE_EXTENDED -lncurses
 SRC_FILES = $(wildcard *.c)
 
 thinning-veil: $(SRC_FILES)

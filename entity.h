@@ -15,7 +15,7 @@ typedef struct {
 
 typedef struct Entity {
     Position pos;
-    char symbol;
+    const cchar_t symbol;
 
     // For entity list
     struct Entity *previous;

@@ -1,4 +1,5 @@
-#include <ncurses.h>
+#include <locale.h>
+#include <curses.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -19,6 +20,8 @@ Entity *player = NULL;
 Encapsulated ncurses terminal setup
 */
 void ncurses_setup(){
+    setlocale(LC_ALL, "");  // Allows use of Unicode charset
+
     initscr();
 
     // Get terminal window width & height
@@ -37,10 +40,13 @@ int main(){
 
 	ncurses_setup();
 
+    const cchar_t wall = {A_NORMAL, L"\u2592"};
+    const cchar_t floor = {A_NORMAL, L" "};
+
 	for (int x = 0; x < terminal_width; x++){
 		for (int y = 0; y < terminal_height; y++){
 			noise = open_simplex_noise2(ctx, x*SCALE, y*SCALE);
-			mvaddch(y, x, noise > CUTOFF ? '#' : '.');
+			mvadd_wch(y, x, noise > CUTOFF ? &wall : &floor);
 		}
 	}
 

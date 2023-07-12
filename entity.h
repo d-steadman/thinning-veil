@@ -15,7 +15,7 @@ typedef struct {
 
 typedef struct Entity {
     Position pos;
-    const cchar_t symbol;
+    cchar_t symbol;
 
     // For entity list
     struct Entity *previous;
@@ -36,7 +36,7 @@ typedef enum {
 } MoveStatus;
 
 /* Generic entity methods */
-Entity *create_entity(Position start, char symbol);
+Entity *create_entity(Position start, cchar_t symbol);
 void free_entity(Entity *entity);
 
 // No map parameter, use extern

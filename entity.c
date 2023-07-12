@@ -3,7 +3,7 @@
 
 #include "entity.h"
 
-Entity *create_entity(Position start, char symbol) {
+Entity *create_entity(Position start, cchar_t symbol) {
     Entity *new_entity = calloc(1, sizeof(Entity));
 
     new_entity->pos.x = start.x;

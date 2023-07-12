@@ -40,8 +40,9 @@ int main(){
 
 	ncurses_setup();
 
-    const cchar_t wall = {A_NORMAL, L"\u2592"};
+    const cchar_t wall = {A_BLINK, L"\u2592"};
     const cchar_t floor = {A_NORMAL, L" "};
+
 
 	for (int x = 0; x < terminal_width; x++){
 		for (int y = 0; y < terminal_height; y++){

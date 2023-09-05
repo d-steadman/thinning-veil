@@ -4,7 +4,8 @@
 #include "entity.h"
 
 Entity *create_entity(Position start, cchar_t symbol) {
-    Entity *new_entity = calloc(1, sizeof(Entity));
+    Entity *new_entity = (Entity *)calloc(1, sizeof(Entity));
+    assert(new_entity != NULL);
 
     new_entity->pos.x = start.x;
     new_entity->pos.y = start.y;

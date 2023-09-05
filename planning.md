@@ -42,3 +42,7 @@ Items will sometimes belong to a vindictive spirit that will attack you upon equ
 - Entangled spirit
 Occasionally, an equippable item will be entangled with a spirit that will enchant the weapon with certain abilities. These spirits maybe be freed through ritual which may improve a player's alignment in either direction.
 
+### Attribute Ideas
+Attributes may be good, nuetral, or bad. They may be physical, spiritual, or conditional attributes (may impart conditions on the victim or the user).
+
+Weapons:

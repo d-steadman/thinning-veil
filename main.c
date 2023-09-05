@@ -3,11 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "entity.h"
-#include "open-simplex.h"
 
-#define SCALE 0.2
-#define CUTOFF 0
 
 // Terminal default externs
 int terminal_width, terminal_height;
@@ -29,15 +25,6 @@ void ncurses_setup(){
 }
 
 int main(){
-	// Open Simplex
-	struct osn_context *ctx;
-	double noise;
-
-	if (open_simplex_noise(0LL, &ctx) != 0) {
-		printf("Error: could not create Open Simplex context\n");
-		exit(1);
-	}
-
 	ncurses_setup();
 
     const cchar_t wall = {A_BLINK, L"\u2592"};
